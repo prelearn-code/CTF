@@ -1,0 +1,11 @@
+from Crypto.Util.number import long_to_bytes, inverse
+
+c = 27565231154623519221597938803435789010285480123476977081867877272451638645710
+p = 262248800182277040650192055439906580479
+q = 262854994239322828547925595487519915551
+e = 65533
+phi = (p - 1) * (q - 1)
+d = inverse(e, phi)
+m = pow(c, d, p * q)
+flag = long_to_bytes(m)
+print(flag.decode())

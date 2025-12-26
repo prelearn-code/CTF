@@ -1,0 +1,7 @@
+import hashlib
+
+d = 8920758995414587152829426558580025657357328745839747693739591820283538307445
+
+flag = "flag{" + hashlib.md5(hex(d)).hexdigest() + "}"
+
+print(flag)
